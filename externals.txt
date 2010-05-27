@@ -1,0 +1,7 @@
+#
+# Create this file: svn propget svn:externals . > externals.txt
+# Apply this file:  svn propset svn:externals -F externals.txt .
+#
+
+merengue https://svnpub.yaco.es/merengue/trunk/merengueproj/merengue
+merengue_plugins https://svnpub.yaco.es/merengue/trunk/merengueproj/plugins
