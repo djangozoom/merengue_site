@@ -4,4 +4,4 @@
 #
 
 merengue https://svnpub.yaco.es/merengue/trunk/merengueproj/merengue
-merengue_plugins https://svnpub.yaco.es/merengue/trunk/merengueproj/plugins
+plugins https://svnpub.yaco.es/merengue/trunk/merengueproj/plugins
