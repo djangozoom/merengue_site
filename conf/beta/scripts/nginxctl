@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASEDIR="/home/demomerengue"
+BASEDIR="/home/merengue"
 NGINX="$BASEDIR/nginx"
 PIDFILE="$BASEDIR/pid/nginx.pid"
 
@@ -39,7 +39,7 @@ case "$1" in
 	reload
     ;;
     *)
-        echo "Usage: /etc/init.d/nginxctl {start|stop|restart}"
+        echo "Usage: ~/scripts/nginxctl {start|stop|restart}"
         exit 1
     ;;
 esac

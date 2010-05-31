@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-BASEDIR=/home/demomerengue
+BASEDIR=/home/merengue
 PROJECTDIR=$BASEDIR/demomerengueprojectorg
 
 function enable_virtualenv {
@@ -36,7 +36,7 @@ function sync_plugins_media {
 }
 
 function update_doc {
-    echo "Updating demo merengueprojectorg documentation"
+    echo "Updating beta merengueprojectorg documentation"
     cd $BASEDIR/docs/
     svn up --username=$SVNUSERNAME --password=$SVNPASSWORD
     touch index.txt
