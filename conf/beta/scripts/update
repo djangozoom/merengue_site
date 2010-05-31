@@ -27,7 +27,7 @@ function dmigrate {
 function servers_restart {
     echo "Reiniciando los servidores"
     cd $BASEDIR
-    . scripts/demomerengue restart
+    scripts/betamerengue restart
 }
 
 function sync_plugins_media {
