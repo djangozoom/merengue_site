@@ -1,0 +1,51 @@
+#!/bin/bash -e
+
+BASEDIR=/home/demomerengue
+PROJECTDIR=$BASEDIR/demomerengueprojectorg
+
+function enable_virtualenv {
+    echo "Activando el entorno (virtualenv)"
+    cd $BASEDIR
+    . virtualenv/bin/activate
+}
+
+function update_code {
+    echo "Actualizando el proyecto a la ultima revision"
+    cd $PROJECTDIR
+    svn up --username=$SVNUSERNAME --password=$SVNPASSWORD
+}
+function remove_pyc_files {
+    echo "Eliminando ficheros precompilados de python"
+    find -iname "*.pyc" -exec rm {}  \;
+}
+function dmigrate {
+    echo "Actualizando la base de datos"
+    cd $PROJECTDIR
+    python manage.py migrate
+}
+
+function servers_restart {
+    echo "Reiniciando los servidores"
+    cd $BASEDIR
+    . scripts/demomerengue restart
+}
+
+function sync_plugins_media {
+    cd $PROJECTDIR
+    python manage.py sync_plugins_media --all
+}
+
+function update_doc {
+    echo "Updating demo merengueprojectorg documentation"
+    cd $BASEDIR/docs/
+    svn up --username=$SVNUSERNAME --password=$SVNPASSWORD
+    touch index.txt
+    make html
+}
+
+enable_virtualenv
+update_code
+remove_pyc_files
+sync_plugins_media
+dmigrate
+servers_restart
