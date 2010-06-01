@@ -134,6 +134,7 @@ JOHNNY_MIDDLEWARE_KEY_PREFIX = '%s-cache' % DATABASE_NAME
 
 # Do not detect plugins
 DETECT_BROKEN_PLUGINS = False
+DETECT_NEW_PLUGINS = False
 
 # Allow overwriting any configuration in optional settings_local.py
 # (it can be used to set up your own database, debug and cache options, contact mails...)
