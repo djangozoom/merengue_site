@@ -16,6 +16,13 @@ function start {
    $BASEDIR/bin/uwsgi -p 2 -C -M 4 -A 4 -m -s $SOCKET -H $VIRTUALENV $PROJECTNAME.wsgi --pythonpath $BASEDIR/$PROJECTNAME/ --pidfile $PIDFILE -d $LOGFILE
 }
 
+function debug {
+   echo "Modo depuracion Merengue Demo:"
+   cd $BASEDIR
+   . $BASEDIR/virtualenv/bin/activate
+   $BASEDIR/bin/uwsgi -i -C -A 4 -m -s $SOCKET -H $VIRTUALENV $PROJECTNAME.wsgi --pythonpath $BASEDIR/$PROJECT/
+}
+
 function stop {
     echo "Terminando Merengue Beta:"
     pgrep uwsgi |xargs kill -9 2> /dev/null
@@ -29,10 +36,16 @@ case "$1" in
     stop)
         stop
     ;;
+
     restart)
         stop
         start
     ;;
+
+    debug)
+        debug
+    ;;
+
     *)
         echo "Usage: ~/scripts/betamerengue {start|stop|restart}"
         exit 1
