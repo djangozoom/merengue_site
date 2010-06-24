@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load i18n inlinetrans %}
+{% block page %}
+
+<script type="text/javascript">
+ jQuery(document).ready(function() {
+    jQuery('#id_username').focus()
+ });
+</script>
+
+<style type="text/css">
+  #login form {
+      margin-top: 100px;
+  }
+  #login h1 {
+      font-size: 1.5em;
+  }
+  #login h1,
+  #login .credentials {
+      text-align: center;
+  }
+</style>
+
+<div id="login">
+  <form method="post" action="{% url merengue_login %}">
+  <h1>{% inline_trans "Merengue demo server" %}</h1>
+  <p class="credentials">{% inline_trans "You can log in with" %}: <code><strong>admin</strong>/<strong>admin</strong></code></p>
+  {{ form.as_p }}
+  <p class="actionRow">
+  <input type="hidden" name="next" value="{{ next }}" />
+  <input type="submit" value="{% trans "Login" %}" />
+  </p>
+  </form>
+</div>
+{% endblock %}
