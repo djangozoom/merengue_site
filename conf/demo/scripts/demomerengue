@@ -11,7 +11,7 @@ function start {
    echo "Iniciando Merengue Demo:"
    cd $BASEDIR
    . $BASEDIR/virtualenv/bin/activate
-   $BASEDIR/bin/uwsgi -p 2 -C -M 4 -A 4 -m -s $SOCKET -H $VIRTUALENV $PROJECTNAME.wsgi --pythonpath $BASEDIR/$PROJECT/ --pidfile $PIDFILE -d $LOGFILE
+   $BASEDIR/bin/uwsgi -p 1 -C -M 4 -A 4 -m -s $SOCKET -H $VIRTUALENV $PROJECTNAME.wsgi --pythonpath $BASEDIR/$PROJECT/ --pidfile $PIDFILE -d $LOGFILE
 }
 
 function debug {
