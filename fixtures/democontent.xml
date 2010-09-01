@@ -25,6 +25,15 @@
     <field type="FloatField" name="rank">100.0</field>
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>  
+  <object pk="3" model="event.event">
+    <field type="DateTimeField" name="publish_date"><None></None></field>
+    <field type="DateTimeField" name="expire_date"><None></None></field>
+    <field type="DateTimeField" name="start">2010-09-28 17:56:55</field>
+    <field type="DateTimeField" name="end">2010-10-05 17:57:01</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+    <field to="event.category" name="categories" rel="ManyToManyRel"></field>
   </object>
   <object pk="2" model="base.basecontent">
     <field type="CharField" name="name_es">Documento de sección dos</field>
@@ -125,7 +134,19 @@
     <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">2</field>
     <field type="PositiveIntegerField" name="order">0</field>
   </object>
+  <object pk="3" model="section.sectionrelatedcontent">
+    <field to="section.basesection" name="basesection" rel="ManyToOneRel">1</field>
+    <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">4</field>
+    <field type="PositiveIntegerField" name="order">0</field>
+  </object>
   <object pk="2" model="section.section">
+  </object>
+  <object pk="4" model="section.document">
+    <field type="CharField" name="search_form"><None></None></field>
+    <field type="TextField" name="search_form_filters"><None></None></field>
+    <field type="BooleanField" name="permanent">False</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
   <object pk="2" model="section.document">
     <field type="CharField" name="search_form"><None></None></field>
@@ -141,11 +162,219 @@
     <field type="TextField" name="body_en">&lt;p&gt;This is the first section. You can double click here to edit, or translating this clicking on the&amp;nbsp;&lt;img src="../../../../../../media/merengue/img/section/section_actions.png" alt="section icon" /&gt;icon.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit&lt;/li&gt;&lt;/ul&gt;</field>
     <field type="TextField" name="body_fr"></field>
   </object>
+  <object pk="6" model="section.documentsection">
+    <field to="section.document" name="document" rel="ManyToOneRel">4</field>
+    <field type="IntegerField" name="position">0</field>
+    <field type="TextField" name="body_es"></field>
+    <field type="TextField" name="body_en">&lt;p&gt;This is the first section. You can double click here to edit, or translating this clicking on the&amp;nbsp;&lt;img src="../../../../../../media/merengue/img/section/section_actions.png" alt="section icon" /&gt;icon.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit&lt;/li&gt;&lt;/ul&gt;</field>
+    <field type="TextField" name="body_fr"></field>
+  </object>
   <object pk="5" model="section.documentsection">
     <field to="section.document" name="document" rel="ManyToOneRel">2</field>
     <field type="IntegerField" name="position">1</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;p&gt;Other section.&lt;/p&gt;</field>
     <field type="TextField" name="body_fr"></field>
+  <object pk="7" model="section.documentsection">
+    <field to="section.document" name="document" rel="ManyToOneRel">4</field>
+    <field type="IntegerField" name="position">1</field>
+    <field type="TextField" name="body_es"></field>
+    <field type="TextField" name="body_en">&lt;p&gt;Other section.&lt;/p&gt;</field>
+    <field type="TextField" name="body_fr"></field>
+  </object>
+  </object>
+  <object pk="4" model="base.basecontent">
+    <field type="CharField" name="name_es">Documento de sección de prueba</field>
+    <field type="CharField" name="name_en">Document in test section</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">document-test-section</field>
+    <field type="TextField" name="plain_description_es">Un documento de prueba con algún contenido</field>
+    <field type="TextField" name="plain_description_en">A test document with some stuff...</field>
+    <field type="TextField" name="plain_description_fr"></field>
+    <field type="TextField" name="description_es">&lt;p&gt;Un documento de prueba con alg&amp;uacute;n contenido&lt;/p&gt;</field>
+    <field type="TextField" name="description_en">&lt;p&gt;A test document with some stuff...&lt;/p&gt;</field>
+    <field type="TextField" name="description_fr"></field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-01 16:53:26</field>
+    <field type="DateTimeField" name="modification_date">2010-09-01 16:53:26</field>
+    <field type="DateTimeField" name="user_modification_date">2010-09-01 16:53:26</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">document</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="2" model="base.basecontent">
+    <field type="CharField" name="name_es">Documento de sección dos</field>
+    <field type="CharField" name="name_en">Test document in section two</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">test-document-in-section-two</field>
+    <field type="TextField" name="plain_description_es">Un documento de prueba con algún contenido</field>
+    <field type="TextField" name="plain_description_en">A test document with some stuff...</field>
+    <field type="TextField" name="plain_description_fr"></field>
+    <field type="TextField" name="description_es">&lt;p&gt;Un documento de prueba con alg&amp;uacute;n contenido&lt;/p&gt;</field>
+    <field type="TextField" name="description_en">&lt;div&gt;&lt;p&gt;A test document with &lt;strong&gt;some stuff...&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</field>
+    <field type="TextField" name="description_fr"></field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-01 13:59:03</field>
+    <field type="DateTimeField" name="modification_date">2010-09-01 13:59:03</field>
+    <field type="DateTimeField" name="user_modification_date">2010-09-01 13:59:03</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">document</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="5" model="section.menu">
+    <field type="CharField" name="name_es">Menú al documento</field>
+    <field type="CharField" name="name_en">Menu to document</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-document</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">2</field>
+    <field type="CharField" name="url">/cms/sections/test-section/menu-document/</field>
+    <field type="PositiveIntegerField" name="lft">2</field>
+    <field type="PositiveIntegerField" name="rght">5</field>
+    <field type="PositiveIntegerField" name="tree_id">2</field>
+    <field type="PositiveIntegerField" name="level">1</field>
+  </object>
+  <object pk="2" model="section.menu">
+    <field type="CharField" name="name_es">Menu principal de sección</field>
+    <field type="CharField" name="name_en">Main menu of section</field>
+    <field type="CharField" name="name_fr">Menu principal de l'zone</field>
+    <field type="SlugField" name="slug">main-menu-of-section</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">6</field>
+    <field type="PositiveIntegerField" name="tree_id">2</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
+  <object pk="6" model="section.menu">
+    <field type="CharField" name="name_es">Menú a Django</field>
+    <field type="CharField" name="name_en">Menu to Django</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-django</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">5</field>
+    <field type="CharField" name="url">/cms/sections/test-section/menu-document/menu-django/</field>
+    <field type="PositiveIntegerField" name="lft">3</field>
+    <field type="PositiveIntegerField" name="rght">4</field>
+    <field type="PositiveIntegerField" name="tree_id">2</field>
+    <field type="PositiveIntegerField" name="level">2</field>
+  </object>
+  <object pk="4" model="section.menu">
+    <field type="CharField" name="name_es"><None></None></field>
+    <field type="CharField" name="name_en">Main menu of Otra sección</field>
+    <field type="CharField" name="name_fr"><None></None></field>
+    <field type="SlugField" name="slug">main-menu-of-otra-seccion</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">4</field>
+    <field type="PositiveIntegerField" name="tree_id">4</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
+  <object pk="7" model="section.menu">
+    <field type="CharField" name="name_es">Menú a otro doc</field>
+    <field type="CharField" name="name_en">Menu to other doc</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-other-doc</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">4</field>
+    <field type="CharField" name="url">/cms/sections/section-two/menu-other-doc/</field>
+    <field type="PositiveIntegerField" name="lft">2</field>
+    <field type="PositiveIntegerField" name="rght">3</field>
+    <field type="PositiveIntegerField" name="tree_id">4</field>
+    <field type="PositiveIntegerField" name="level">1</field>
+  </object>
+  <object pk="1" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">5</field>
+  </object>
+  <object pk="2" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">6</field>
+  </object>
+  <object pk="3" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">7</field>
+  </object>
+  <object pk="2" model="section.absolutelink">
+    <field type="CharField" name="url">http://www.djangoproject.org/</field>
+  </object>
+  <object pk="1" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">4</field>
+  </object>
+  <object pk="3" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">2</field>
+  </object>
+  <object pk="4" model="threadedcomments.freethreadedcomment">
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
+    <field type="PositiveIntegerField" name="object_id">1</field>
+    <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel">3</field>
+    <field type="CharField" name="name">Troll</field>
+    <field type="CharField" name="website"></field>
+    <field type="CharField" name="email">msaelices@yaco.es</field>
+    <field type="DateTimeField" name="date_submitted">2010-09-01 18:15:47</field>
+    <field type="DateTimeField" name="date_modified">2010-09-01 18:15:49</field>
+    <field type="DateTimeField" name="date_approved"><None></None></field>
+    <field type="TextField" name="comment">A censured comment</field>
+    <field type="IntegerField" name="markup">5</field>
+    <field type="BooleanField" name="is_public">False</field>
+    <field type="BooleanField" name="is_approved">False</field>
+    <field type="IPAddressField" name="ip_address">127.0.0.1</field>
+  </object>
+  <object pk="3" model="threadedcomments.freethreadedcomment">
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
+    <field type="PositiveIntegerField" name="object_id">1</field>
+    <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="name">Albert</field>
+    <field type="CharField" name="website"></field>
+    <field type="CharField" name="email"></field>
+    <field type="DateTimeField" name="date_submitted">2010-09-01 18:15:22</field>
+    <field type="DateTimeField" name="date_modified">2010-09-01 18:15:22</field>
+    <field type="DateTimeField" name="date_approved"><None></None></field>
+    <field type="TextField" name="comment">New comment</field>
+    <field type="IntegerField" name="markup">5</field>
+    <field type="BooleanField" name="is_public">True</field>
+    <field type="BooleanField" name="is_approved">False</field>
+    <field type="IPAddressField" name="ip_address">127.0.0.1</field>
+  </object>
+  <object pk="2" model="threadedcomments.freethreadedcomment">
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
+    <field type="PositiveIntegerField" name="object_id">1</field>
+    <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="name">Other</field>
+    <field type="CharField" name="website"></field>
+    <field type="CharField" name="email"></field>
+    <field type="DateTimeField" name="date_submitted">2010-09-01 18:15:08</field>
+    <field type="DateTimeField" name="date_modified">2010-09-01 18:15:08</field>
+    <field type="DateTimeField" name="date_approved"><None></None></field>
+    <field type="TextField" name="comment">A response to first comment</field>
+    <field type="IntegerField" name="markup">5</field>
+    <field type="BooleanField" name="is_public">True</field>
+    <field type="BooleanField" name="is_approved">False</field>
+    <field type="IPAddressField" name="ip_address">127.0.0.1</field>
+  </object>
+  <object pk="1" model="threadedcomments.freethreadedcomment">
+    <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
+    <field type="PositiveIntegerField" name="object_id">1</field>
+    <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="name">Lin</field>
+    <field type="CharField" name="website"></field>
+    <field type="CharField" name="email"></field>
+    <field type="DateTimeField" name="date_submitted">2010-09-01 18:14:53</field>
+    <field type="DateTimeField" name="date_modified">2010-09-01 18:14:53</field>
+    <field type="DateTimeField" name="date_approved"><None></None></field>
+    <field type="TextField" name="comment">A test comment</field>
+    <field type="IntegerField" name="markup">5</field>
+    <field type="BooleanField" name="is_public">True</field>
+    <field type="BooleanField" name="is_approved">False</field>
+    <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
 </django-objects>

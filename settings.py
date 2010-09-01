@@ -87,7 +87,7 @@ LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/account/login/'
 
 INSTALLED_APPS += (
-    # put here your project django apps
+    'website',
 )
 
 SVNDIR = path.join(BASEDIR, 'apps')
@@ -99,8 +99,15 @@ FIXTURE_DIRS = (
 )
 
 SITE_FIXTURES = {
-    'section': ('democontent.xml', ),
+    'website': ('democontent.xml', ),
 }
+
+DEMO_PLUGINS = (
+    'event',
+    'facebook',
+    'news',
+    'feedback',
+)
 
 BUILDBOT_IP = '192.168.11.209'
 INTERNAL_IPS = ('127.0.0.1', '80.36.82.38', BUILDBOT_IP)
