@@ -27,10 +27,10 @@
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
   <object pk="2" model="base.basecontent">
-    <field type="CharField" name="name_es">Un documento de prueba</field>
-    <field type="CharField" name="name_en">A test document</field>
+    <field type="CharField" name="name_es">Documento de sección dos</field>
+    <field type="CharField" name="name_en">Test document in section two</field>
     <field type="CharField" name="name_fr"></field>
-    <field type="SlugField" name="slug">test-document</field>
+    <field type="SlugField" name="slug">test-document-in-section-two</field>
     <field type="TextField" name="plain_description_es">Un documento de prueba con algún contenido</field>
     <field type="TextField" name="plain_description_en">A test document with some stuff...</field>
     <field type="TextField" name="plain_description_fr"></field>
@@ -103,10 +103,10 @@
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
   <object pk="2" model="section.basesection">
-    <field type="CharField" name="name_es">Otra sección</field>
-    <field type="CharField" name="name_en">Other section</field>
+    <field type="CharField" name="name_es">Sección dos</field>
+    <field type="CharField" name="name_en">Section two</field>
     <field type="CharField" name="name_fr"></field>
-    <field type="SlugField" name="slug">other-section</field>
+    <field type="SlugField" name="slug">section-two</field>
     <field type="TextField" name="plain_description_es"><None></None></field>
     <field type="TextField" name="plain_description_en"><None></None></field>
     <field type="TextField" name="plain_description_fr"><None></None></field>
@@ -119,6 +119,11 @@
     <field to="section.menu" name="main_menu" rel="OneToOneRel">4</field>
     <field to="base.basecontent" name="main_content" rel="ManyToOneRel"><None></None></field>
     <field to="section.customstyle" name="customstyle" rel="ManyToOneRel"><None></None></field>
+  </object>
+  <object pk="2" model="section.sectionrelatedcontent">
+    <field to="section.basesection" name="basesection" rel="ManyToOneRel">2</field>
+    <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">2</field>
+    <field type="PositiveIntegerField" name="order">0</field>
   </object>
   <object pk="2" model="section.section">
   </object>
