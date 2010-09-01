@@ -9,7 +9,8 @@ def index(request):
     # put here your staff
     core_config = CoreConfig()
     main_content_index = int(core_config.get_config()['home_initial_content'].get_value())
-    content = BaseContent.objects.get(pk=main_content_index)
-    return render_to_response('website/index.html',
+    content = BaseContent.objects.get(pk=main_content_index).get_real_instance()
+    return render_to_response([content._meta.content_view_template,
+                               'website/index.html'],
                               {'content': content},
                               context_instance=RequestContext(request))
