@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+  <object pk="3" model="base.basecontent">
+    <field type="CharField" name="name_es">Un evento aislado</field>
+    <field type="CharField" name="name_en">A standalone event</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">standalone-event</field>
+    <field type="TextField" name="plain_description_es">Este es un evento fuera de ninguna sección</field>
+    <field type="TextField" name="plain_description_en">This is an event outside of any section.</field>
+    <field type="TextField" name="plain_description_fr"></field>
+    <field type="TextField" name="description_es">&lt;p&gt;Este es un evento fuera de ninguna secci&amp;oacute;n&lt;/p&gt;</field>
+    <field type="TextField" name="description_en">&lt;p&gt;This is an event outside of any section.&lt;/p&gt;</field>
+    <field type="TextField" name="description_fr"></field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-01 14:09:18</field>
+    <field type="DateTimeField" name="modification_date">2010-09-01 14:09:18</field>
+    <field type="DateTimeField" name="user_modification_date">2010-09-01 14:09:18</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">event</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="2" model="base.basecontent">
+    <field type="CharField" name="name_es">Un documento de prueba</field>
+    <field type="CharField" name="name_en">A test document</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">test-document</field>
+    <field type="TextField" name="plain_description_es">Un documento de prueba con algún contenido</field>
+    <field type="TextField" name="plain_description_en">A test document with some stuff...</field>
+    <field type="TextField" name="plain_description_fr"></field>
+    <field type="TextField" name="description_es">&lt;p&gt;Un documento de prueba con alg&amp;uacute;n contenido&lt;/p&gt;</field>
+    <field type="TextField" name="description_en">&lt;div&gt;&lt;p&gt;A test document with &lt;strong&gt;some stuff...&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</field>
+    <field type="TextField" name="description_fr"></field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-01 13:59:03</field>
+    <field type="DateTimeField" name="modification_date">2010-09-01 13:59:03</field>
+    <field type="DateTimeField" name="user_modification_date">2010-09-01 13:59:03</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">document</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="1" model="base.basecontent">
+    <field type="CharField" name="name_es">Bienvenido a Merengue</field>
+    <field type="CharField" name="name_en">Welcome to Merengue</field>
+    <field type="CharField" name="name_fr">Bienvenue a Merengue</field>
+    <field type="SlugField" name="slug">welcome</field>
+    <field type="TextField" name="plain_description_es"></field>
+    <field type="TextField" name="plain_description_en"></field>
+    <field type="TextField" name="plain_description_fr"></field>
+    <field type="TextField" name="description_es">Merengue is a full-featured CMS useful for creating websites without writing a single line of code or customizing and extending with any of the plethora of existing Django applications.</field>
+    <field type="TextField" name="description_en">Merengue is a full-featured CMS useful for creating websites without writing a single line of code or customizing and extending with any of the plethora of existing Django applications.</field>
+    <field type="TextField" name="description_fr">Merengue is a full-featured CMS useful for creating websites without writing a single line of code or customizing and extending with any of the plethora of existing Django applications.</field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-03-08 13:47:08</field>
+    <field type="DateTimeField" name="modification_date">2010-03-08 15:47:07</field>
+    <field type="DateTimeField" name="user_modification_date">2010-03-08 15:47:07</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">document</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="2" model="section.menu">
+    <field type="CharField" name="name_es">Menu principal de sección</field>
+    <field type="CharField" name="name_en">Main menu of section</field>
+    <field type="CharField" name="name_fr">Menu principal de l'zone</field>
+    <field type="SlugField" name="slug">main-menu-of-section</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">2</field>
+    <field type="PositiveIntegerField" name="tree_id">2</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
+  <object pk="4" model="section.menu">
+    <field type="CharField" name="name_es"><None></None></field>
+    <field type="CharField" name="name_en">Main menu of Otra sección</field>
+    <field type="CharField" name="name_fr"><None></None></field>
+    <field type="SlugField" name="slug">main-menu-of-otra-seccion</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">2</field>
+    <field type="PositiveIntegerField" name="tree_id">4</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
+  <object pk="2" model="section.basesection">
+    <field type="CharField" name="name_es">Otra sección</field>
+    <field type="CharField" name="name_en">Other section</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">other-section</field>
+    <field type="TextField" name="plain_description_es"><None></None></field>
+    <field type="TextField" name="plain_description_en"><None></None></field>
+    <field type="TextField" name="plain_description_fr"><None></None></field>
+    <field type="TextField" name="description_es"><None></None></field>
+    <field type="TextField" name="description_en"><None></None></field>
+    <field type="TextField" name="description_fr"><None></None></field>
+    <field type="CharField" name="status">published</field>
+    <field type="FileField" name="main_image"></field>
+    <field type="IntegerField" name="order">1</field>
+    <field to="section.menu" name="main_menu" rel="OneToOneRel">4</field>
+    <field to="base.basecontent" name="main_content" rel="ManyToOneRel"><None></None></field>
+    <field to="section.customstyle" name="customstyle" rel="ManyToOneRel"><None></None></field>
+  </object>
+  <object pk="2" model="section.section">
+  </object>
+  <object pk="2" model="section.document">
+    <field type="CharField" name="search_form"><None></None></field>
+    <field type="TextField" name="search_form_filters"><None></None></field>
+    <field type="BooleanField" name="permanent">False</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="4" model="section.documentsection">
+    <field to="section.document" name="document" rel="ManyToOneRel">2</field>
+    <field type="IntegerField" name="position">0</field>
+    <field type="TextField" name="body_es"></field>
+    <field type="TextField" name="body_en">&lt;p&gt;This is the first section. You can double click here to edit, or translating this clicking on the&amp;nbsp;&lt;img src="../../../../../../media/merengue/img/section/section_actions.png" alt="section icon" /&gt;icon.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit&lt;/li&gt;&lt;/ul&gt;</field>
+    <field type="TextField" name="body_fr"></field>
+  </object>
+  <object pk="5" model="section.documentsection">
+    <field to="section.document" name="document" rel="ManyToOneRel">2</field>
+    <field type="IntegerField" name="position">1</field>
+    <field type="TextField" name="body_es"></field>
+    <field type="TextField" name="body_en">&lt;p&gt;Other section.&lt;/p&gt;</field>
+    <field type="TextField" name="body_fr"></field>
+  </object>
+</django-objects>
