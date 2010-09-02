@@ -497,6 +497,16 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
+  <object pk="7" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Merengue dog</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:39:42</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">video</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
   <object pk="1" model="multimedia.photo">
     <field type="FileField" name="image">fotos/image_1.jpeg</field>
     <field type="TextField" name="caption_es">Imagen de ejemplo de un perro</field>
@@ -536,6 +546,12 @@
     <field type="CharField" name="external_url">http://www.youtube.com/watch?v=frxiP_ICphk</field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
+  <object pk="7" model="multimedia.video">
+    <field type="FileField" name="file"></field>
+    <field type="FileField" name="preview">videos/preview_7.png</field>
+    <field type="CharField" name="external_url">http://www.youtube.com/watch?v=Nc9xq-TVyHI</field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
   <object pk="1" model="base.multimediarelation">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">1</field>
@@ -546,7 +562,7 @@
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">4</field>
     <field type="BooleanField" name="is_featured">False</field>
-    <field type="IntegerField" name="order">0</field>
+    <field type="IntegerField" name="order">1</field>
   </object>
   <object pk="2" model="base.multimediarelation">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
@@ -558,7 +574,7 @@
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">5</field>
     <field type="BooleanField" name="is_featured">False</field>
-    <field type="IntegerField" name="order">1</field>
+    <field type="IntegerField" name="order">4</field>
   </object>
   <object pk="3" model="base.multimediarelation">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
@@ -571,5 +587,11 @@
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">6</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">2</field>
+  </object>
+  <object pk="7" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">7</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">0</field>
   </object>
 </django-objects>
