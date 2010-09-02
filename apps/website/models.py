@@ -1,22 +1,27 @@
 from south.signals import post_migrate
 
 from merengue.section.models import Menu, ContentLink, AbsoluteLink
+from website import lipsum
+
+lipsum_generator = lipsum.Generator()
+lipsum_html_generator = lipsum.MarkupGenerator()
 
 
 def handle_post_migrate(sender, **kwargs):
     if kwargs['app'] == 'website':
         add_portal_menus()
+        add_news_items()
 
 
 def add_portal_menus():
     root_menu = Menu.objects.get(slug='portal_menu')
     menu2 = Menu.objects.create(
-        name_en='Menu to Django',
-        slug='menu-django',
+        name_en='Menu to News',
+        slug='menu-news',
         parent=root_menu,
     )
     link2 = AbsoluteLink.objects.create(
-        url='http://www.djangoproject.com/',
+        url='/news/',
         menu=menu2,
     )
     menu1 = Menu.objects.create(
@@ -47,6 +52,19 @@ def add_portal_menus():
         content_id=4,
         menu=menu1_3,
     )
+
+
+def add_news_items():
+    from plugins.news.models import NewsItem
+    for i in range(100):
+        news_item = NewsItem.objects.create(
+            slug='news-item-%d' % i,
+            name_en='News item %d' % i,
+            name_es='Noticia %d' % i,
+            status='published',
+            description_en=lipsum_generator.generate_paragraph(),
+            body_en=lipsum_html_generator.generate_paragraphs_html_li(5),
+        )
 
 
 post_migrate.connect(handle_post_migrate)
