@@ -87,6 +87,18 @@
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
+  <object pk="3" model="section.menu">
+    <field type="CharField" name="name_es">portal menu</field>
+    <field type="CharField" name="name_en">portal menu</field>
+    <field type="CharField" name="name_fr">portal menu</field>
+    <field type="SlugField" name="slug">portal_menu</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">10</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
   <object pk="2" model="section.menu">
     <field type="CharField" name="name_es">Menu principal de sección</field>
     <field type="CharField" name="name_en">Main menu of section</field>
