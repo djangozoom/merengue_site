@@ -437,4 +437,139 @@
     <field type="SlugField" name="slug">secondary-link2</field>
     <field type="FileField" name="image"></field>
   </object>
+  <object pk="1" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Example image 1</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:35:46</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">photo</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="2" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Example image 2</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:36:23</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">photo</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="3" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Example image 3</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:36:56</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">photo</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="4" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Navigation system</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:38:46</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">video</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="5" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Visual block management</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:39:12</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">video</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="6" model="multimedia.basemultimedia">
+    <field type="CharField" name="name">Skinnable screencast</field>
+    <field type="CharField" name="original_filename"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-09-02 12:39:42</field>
+    <field type="CharField" name="tags"></field>
+    <field type="CharField" name="class_name">video</field>
+    <field type="CharField" name="status">published</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="authors"></field>
+  </object>
+  <object pk="1" model="multimedia.photo">
+    <field type="FileField" name="image">fotos/image_1.jpeg</field>
+    <field type="TextField" name="caption_es">Imagen de ejemplo de un perro</field>
+    <field type="TextField" name="caption_en">Example image of a dog</field>
+    <field type="TextField" name="caption_fr"></field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="2" model="multimedia.photo">
+    <field type="FileField" name="image">fotos/image_2.jpeg</field>
+    <field type="TextField" name="caption_es">Imagen de ejemplo de futbolín</field>
+    <field type="TextField" name="caption_en">Foosball example image</field>
+    <field type="TextField" name="caption_fr"></field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="3" model="multimedia.photo">
+    <field type="FileField" name="image">fotos/image_3.jpeg</field>
+    <field type="TextField" name="caption_es">Imagen de ejemplo de robot</field>
+    <field type="TextField" name="caption_en">Robot image example</field>
+    <field type="TextField" name="caption_fr"></field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="4" model="multimedia.video">
+    <field type="FileField" name="file"></field>
+    <field type="FileField" name="preview"></field>
+    <field type="CharField" name="external_url">http://www.youtube.com/watch?v=iB5k6uIWULs</field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="5" model="multimedia.video">
+    <field type="FileField" name="file"></field>
+    <field type="FileField" name="preview"></field>
+    <field type="CharField" name="external_url">http://www.youtube.com/watch?v=31BCNBAEBjU</field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="6" model="multimedia.video">
+    <field type="FileField" name="file"></field>
+    <field type="FileField" name="preview"></field>
+    <field type="CharField" name="external_url">http://www.youtube.com/watch?v=frxiP_ICphk</field>
+    <field type="CharField" name="plone_uid"><None></None></field>
+  </object>
+  <object pk="1" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">1</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">0</field>
+  </object>
+  <object pk="4" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">4</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">0</field>
+  </object>
+  <object pk="2" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">2</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">1</field>
+  </object>
+  <object pk="5" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">5</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">1</field>
+  </object>
+  <object pk="3" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">3</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">2</field>
+  </object>
+  <object pk="6" model="base.multimediarelation">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">6</field>
+    <field type="BooleanField" name="is_featured">False</field>
+    <field type="IntegerField" name="order">2</field>
+  </object>
 </django-objects>
