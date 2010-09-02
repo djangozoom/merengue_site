@@ -377,4 +377,52 @@
     <field type="BooleanField" name="is_approved">False</field>
     <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
+  <object pk="1" model="portal.portallink">
+    <field type="CharField" name="name_es">Enlace primario 1</field>
+    <field type="CharField" name="name_en">Primary link 1</field>
+    <field type="CharField" name="name_fr"></field>
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="external_url"></field>
+    <field type="CharField" name="cached_url">/cms/sections/test-section/contents/1/welcome/</field>
+    <field type="IntegerField" name="order"><None></None></field>
+    <field type="CharField" name="category">primary</field>
+    <field type="SlugField" name="slug">primary-link1</field>
+    <field type="FileField" name="image"></field>
+  </object>
+  <object pk="2" model="portal.portallink">
+    <field type="CharField" name="name_es">Enlace primario 2</field>
+    <field type="CharField" name="name_en">Primary link 2</field>
+    <field type="CharField" name="name_fr"></field>
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">2</field>
+    <field type="CharField" name="external_url"></field>
+    <field type="CharField" name="cached_url">/cms/sections/section-two/contents/2/test-document-in-section-two/</field>
+    <field type="IntegerField" name="order"><None></None></field>
+    <field type="CharField" name="category">primary</field>
+    <field type="SlugField" name="slug">primary-link-2</field>
+    <field type="FileField" name="image"></field>
+  </object>
+  <object pk="3" model="portal.portallink">
+    <field type="CharField" name="name_es">Enlace secundario 1</field>
+    <field type="CharField" name="name_en">Secondary link 1</field>
+    <field type="CharField" name="name_fr"></field>
+    <field to="base.basecontent" name="content" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="external_url">http://www.merengueproject.org/</field>
+    <field type="CharField" name="cached_url">http://www.merengueproject.org/</field>
+    <field type="IntegerField" name="order"><None></None></field>
+    <field type="CharField" name="category">secondary</field>
+    <field type="SlugField" name="slug">secondary-link1</field>
+    <field type="FileField" name="image"></field>
+  </object>
+  <object pk="4" model="portal.portallink">
+    <field type="CharField" name="name_es">Enlace secundario 2</field>
+    <field type="CharField" name="name_en">Secondary link 2</field>
+    <field type="CharField" name="name_fr"></field>
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">3</field>
+    <field type="CharField" name="external_url"></field>
+    <field type="CharField" name="cached_url">/cms/base/view/base/basecontent/3/standalone-event/</field>
+    <field type="IntegerField" name="order"><None></None></field>
+    <field type="CharField" name="category">secondary</field>
+    <field type="SlugField" name="slug">secondary-link2</field>
+    <field type="FileField" name="image"></field>
+  </object>
 </django-objects>
