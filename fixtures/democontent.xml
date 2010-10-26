@@ -594,4 +594,8 @@
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">0</field>
   </object>
+  <object pk="1" model="sites.site">
+    <field type="CharField" name="domain">demo.merengueproject.org</field>
+    <field type="CharField" name="name">demo.merengueproject.org</field>
+  </object>
 </django-objects>
