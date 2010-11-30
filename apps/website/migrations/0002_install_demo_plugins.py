@@ -17,7 +17,7 @@ class Migration(DataMigration):
             plugin.installed = True
             plugin.active = True
             plugin.save()
-            install_plugin(plugin, 'plugins.%s' % plug_dir)
+            install_plugin(plugin)
             transaction.commit()
 
     def backwards(self, orm):
