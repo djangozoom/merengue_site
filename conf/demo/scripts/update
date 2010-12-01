@@ -14,11 +14,13 @@ function update_code {
     cd $PROJECTDIR
     svn up --username=$SVNUSERNAME --password=$SVNPASSWORD
 }
+
 function remove_pyc_files {
     echo "Eliminando ficheros precompilados de python"
     find -iname "*.pyc" -exec rm {}  \;
 }
-function dmigrate {
+
+function migrate {
     echo "Actualizando la base de datos"
     cd $PROJECTDIR
     python manage.py migrate
@@ -46,6 +48,6 @@ function update_doc {
 enable_virtualenv
 update_code
 remove_pyc_files
+migrate
 sync_plugins_media
-dmigrate
 servers_restart
