@@ -34,7 +34,12 @@ function servers_restart {
 
 function sync_plugins_media {
     cd $PROJECTDIR
-    python manage.py sync_plugins_media --all
+    python manage.py sync_plugins_media --link --all
+}
+
+function sync_apps_media {
+    cd $PROJECTDIR
+    python manage.py sync_apps_media --link
 }
 
 function update_doc {
@@ -47,7 +52,8 @@ function update_doc {
 
 enable_virtualenv
 update_code
-remove_pyc_files
 migrate
+remove_pyc_files
 sync_plugins_media
+sync_apps_media
 servers_restart
