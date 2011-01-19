@@ -51,8 +51,8 @@ def add_portal_menus():
         menu1_2.name_en = 'Homepage'
         menu1_2.parent = menu1
         menu1_2.save()
-    welcome_doc = BaseContent.objects.get(id=1)
-    other_doc = BaseContent.objects.get(id=4)
+    welcome_doc = BaseContent.objects.get(id=32)
+    other_doc = BaseContent.objects.get(id=33)
     link1_2, created = ContentLink.objects.get_or_create(
         menu=menu1_2,
         content=welcome_doc,
