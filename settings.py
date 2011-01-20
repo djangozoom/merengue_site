@@ -40,6 +40,7 @@ LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('es', ugettext('Español')),
     ('en', ugettext('English')),
+    ('fr', ugettext('Français')),
 )
 
 SITE_ID = 1
@@ -87,11 +88,7 @@ LOGIN_URL = '/account/login/'
 
 INSTALLED_APPS += (
     'website',
-    #'plugins.contactform',
 )
-
-REQUIRED_PLUGINS = ('core', 'forum', 'rss', )
-
 
 SVNDIR = path.join(BASEDIR, 'apps')
 
@@ -146,8 +143,8 @@ CACHE_BACKEND = 'johnny.backends.locmem:///'
 JOHNNY_MIDDLEWARE_KEY_PREFIX = '%s-cache' % DATABASE_NAME
 
 # Do not detect plugins
-DETECT_BROKEN_PLUGINS = True
-DETECT_NEW_PLUGINS = True
+DETECT_BROKEN_PLUGINS = False
+DETECT_NEW_PLUGINS = False
 
 # Allow overwriting any configuration in optional settings_local.py
 # (it can be used to set up your own database, debug and cache options, contact mails...)
