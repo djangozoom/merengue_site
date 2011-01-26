@@ -3,5 +3,5 @@
 # Apply this file:  svn propset svn:externals -F externals.txt .
 #
 
-merengue https://svnpub.yaco.es/merengue/trunk/merengueproj/merengue
-plugins https://svnpub.yaco.es/merengue/trunk/merengueproj/plugins
+merengue https://svn.merengueproject.org/trunk/merengueproj/merengue
+plugins https://svn.merengueproject.org/trunk/merengueproj/plugins
