@@ -15,6 +15,10 @@ function update_code {
     svn up --username=$SVNUSERNAME --password=$SVNPASSWORD
 }
 
+function install_dependences {
+    pip install -r http://svn.merengueproject.org/trunk/merengueproj/requirements.txt
+}
+
 function remove_pyc_files {
     echo "Eliminando ficheros precompilados de python"
     find -iname "*.pyc" -exec rm {}  \;
@@ -52,6 +56,7 @@ function update_doc {
 
 enable_virtualenv
 update_code
+install_dependences
 migrate
 remove_pyc_files
 sync_plugins_media
