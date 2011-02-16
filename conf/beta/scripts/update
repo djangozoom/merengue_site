@@ -26,7 +26,7 @@ function remove_pyc_files {
 function migrate {
     echo "Actualizando la base de datos"
     cd $PROJECTDIR
-    python manage.py migrate
+    python manage.py syncdb --migrate
 }
 
 function servers_restart {
