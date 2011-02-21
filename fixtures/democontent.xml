@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <django-objects version="1.0">
-  <object pk="30" model="base.basecontent">
+  <object pk="30" model="base.basecontent" overwrite="no">
     <field type="CharField" name="name_es">Un evento aislado</field>
     <field type="CharField" name="name_en">A standalone event</field>
     <field type="CharField" name="name_fr"></field>
@@ -26,7 +26,7 @@
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>  
-  <object pk="30" model="event.event">
+  <object pk="30" model="event.event" overwrite="no">
     <field type="DateTimeField" name="publish_date"><None></None></field>
     <field type="DateTimeField" name="expire_date"><None></None></field>
     <field type="DateTimeField" name="start">2010-09-28 17:56:55</field>
@@ -35,7 +35,7 @@
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
     <field to="event.category" name="categories" rel="ManyToManyRel"></field>
   </object>
-  <object pk="31" model="base.basecontent">
+  <object pk="31" model="base.basecontent" overwrite="no">
     <field type="CharField" name="name_es">Documento de sección dos</field>
     <field type="CharField" name="name_en">Test document in section two</field>
     <field type="CharField" name="name_fr"></field>
@@ -61,7 +61,7 @@
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="32" model="base.basecontent">
+  <object pk="32" model="base.basecontent" overwrite="no">
     <field type="CharField" name="name_es">Bienvenido a Merengue</field>
     <field type="CharField" name="name_en">Welcome to Merengue</field>
     <field type="CharField" name="name_fr">Bienvenue a Merengue</field>
@@ -87,7 +87,7 @@
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="3" model="section.menu">
+  <object pk="3" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">portal menu</field>
     <field type="CharField" name="name_en">portal menu</field>
     <field type="CharField" name="name_fr">portal menu</field>
@@ -99,7 +99,7 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
-  <object pk="2" model="section.menu">
+  <object pk="2" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">Menu principal de sección</field>
     <field type="CharField" name="name_en">Main menu of section</field>
     <field type="CharField" name="name_fr">Menu principal de l'zone</field>
@@ -111,19 +111,7 @@
     <field type="PositiveIntegerField" name="tree_id">2</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
-  <object pk="4" model="section.menu">
-    <field type="CharField" name="name_es"><None></None></field>
-    <field type="CharField" name="name_en">Main menu of Otra sección</field>
-    <field type="CharField" name="name_fr"><None></None></field>
-    <field type="SlugField" name="slug">main-menu-of-otra-seccion</field>
-    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
-    <field type="CharField" name="url"><None></None></field>
-    <field type="PositiveIntegerField" name="lft">1</field>
-    <field type="PositiveIntegerField" name="rght">2</field>
-    <field type="PositiveIntegerField" name="tree_id">4</field>
-    <field type="PositiveIntegerField" name="level">0</field>
-  </object>
-  <object pk="2" model="section.basesection">
+  <object pk="35" model="base.basecontent" overwrite="no">
     <field type="CharField" name="name_es">Sección dos</field>
     <field type="CharField" name="name_en">Section two</field>
     <field type="CharField" name="name_fr"></field>
@@ -136,82 +124,106 @@
     <field type="TextField" name="description_fr"><None></None></field>
     <field type="CharField" name="status">published</field>
     <field type="FileField" name="main_image"></field>
+    <field to="base.contactinfo" name="contact_info" rel="ManyToOneRel"><None></None></field>
+    <field type="DateTimeField" name="creation_date">2010-03-08 13:47:08</field>
+    <field type="DateTimeField" name="modification_date">2010-03-08 15:47:07</field>
+    <field type="DateTimeField" name="user_modification_date">2010-03-08 15:47:07</field>
+    <field to="auth.user" name="last_editor" rel="ManyToOneRel">1</field>
+    <field type="CharField" name="tags"></field>
+    <field type="TextField" name="meta_desc"></field>
+    <field type="CharField" name="commentable">allowed</field>
+    <field type="CharField" name="class_name">document</field>
+    <field type="FloatField" name="rank">100.0</field>
+    <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
+    <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
+  </object>
+  <object pk="4" model="section.menu" overwrite="no">
+    <field type="CharField" name="name_es"><None></None></field>
+    <field type="CharField" name="name_en">Main menu of Otra sección</field>
+    <field type="CharField" name="name_fr"><None></None></field>
+    <field type="SlugField" name="slug">main-menu-of-otra-seccion</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
+    <field type="CharField" name="url"><None></None></field>
+    <field type="PositiveIntegerField" name="lft">1</field>
+    <field type="PositiveIntegerField" name="rght">2</field>
+    <field type="PositiveIntegerField" name="tree_id">4</field>
+    <field type="PositiveIntegerField" name="level">0</field>
+  </object>
+  <object pk="35" model="section.basesection" overwrite="no">
     <field type="IntegerField" name="order">1</field>
     <field to="section.menu" name="main_menu" rel="OneToOneRel">4</field>
     <field to="base.basecontent" name="main_content" rel="ManyToOneRel"><None></None></field>
     <field to="section.customstyle" name="customstyle" rel="ManyToOneRel"><None></None></field>
   </object>
-  <object pk="2" model="section.sectionrelatedcontent">
-    <field to="section.basesection" name="basesection" rel="ManyToOneRel">2</field>
+  <object pk="2" model="section.sectionrelatedcontent" overwrite="no">
+    <field to="section.basesection" name="basesection" rel="ManyToOneRel">35</field>
     <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">31</field>
     <field type="PositiveIntegerField" name="order">0</field>
   </object>
-  <object pk="3" model="section.sectionrelatedcontent">
-    <field to="section.basesection" name="basesection" rel="ManyToOneRel">1</field>
+  <object pk="3" model="section.sectionrelatedcontent" overwrite="no">
+    <field to="section.basesection" name="basesection" rel="ManyToOneRel">2</field>
     <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">33</field>
     <field type="PositiveIntegerField" name="order">0</field>
   </object>
-  <object pk="4" model="section.sectionrelatedcontent">
-    <field to="section.basesection" name="basesection" rel="ManyToOneRel">1</field>
+  <object pk="4" model="section.sectionrelatedcontent" overwrite="no">
+    <field to="section.basesection" name="basesection" rel="ManyToOneRel">2</field>
     <field to="base.basecontent" name="basecontent" rel="ManyToOneRel">32</field>
     <field type="PositiveIntegerField" name="order">0</field>
   </object>
-  <object pk="2" model="section.section">
-  </object>
-  <object pk="33" model="section.document">
+  <object pk="33" model="section.document" overwrite="no">
     <field type="CharField" name="search_form"><None></None></field>
     <field type="TextField" name="search_form_filters"><None></None></field>
     <field type="BooleanField" name="permanent">False</field>
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="32" model="section.document">
+  <object pk="32" model="section.document" overwrite="no">
     <field type="CharField" name="search_form"><None></None></field>
     <field type="TextField" name="search_form_filters"><None></None></field>
     <field type="BooleanField" name="permanent">False</field>
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="31" model="section.document">
+  <object pk="31" model="section.document" overwrite="no">
     <field type="CharField" name="search_form"><None></None></field>
     <field type="TextField" name="search_form_filters"><None></None></field>
     <field type="BooleanField" name="permanent">False</field>
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="8" model="section.documentsection">
+  <object pk="8" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">32</field>
     <field type="IntegerField" name="position">0</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;h2&gt;Nexts steps:&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="../../../../../login/?next=/"&gt;Log in&lt;/a&gt; as administrator user (username is &lt;em&gt;admin&lt;/em&gt; and password is &lt;em&gt;admin&lt;/em&gt;).&lt;/li&gt;&lt;li&gt;Go to the &lt;a href="../../../../../../admin/"&gt;admin site&lt;/a&gt;, and click in the &lt;a href="../../../../../../admin/section/section/"&gt;sections link&lt;/a&gt;, to add some sections to your site. If you publish these sections, you will see them in the &lt;em&gt;navigation block &lt;/em&gt;(placed by default in the left column).&lt;/li&gt;&lt;li&gt;In every section, you can:&lt;ul&gt;&lt;li&gt;Add documents inside. Look for the &lt;em&gt;"Section children"&lt;/em&gt; link inside your section to see the content types you can add.&lt;/li&gt;&lt;li&gt;Add a hierarchical section menu, with links to the contents inside your section or external links.&lt;/li&gt;&lt;li&gt;After adding some contents into your section, you can choose the &lt;em&gt;main content&lt;/em&gt; of this section (the first content you will see when you access the section).&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;You can also try some plugins, going to the &lt;a href="../../../../../../admin/pluggable/registeredplugin/"&gt;plugins link&lt;/a&gt; inside the admin site. Let's see some examples:&lt;ul&gt;&lt;li&gt;If you install the &lt;em&gt;events&lt;/em&gt; plugin you will have:&lt;ul&gt;&lt;li&gt;An event calendar block placed by default on the right sidebar.&lt;/li&gt;&lt;li&gt;An events custom admin, that you will see in the admin site (look for &lt;em&gt;"Events"&lt;/em&gt; link).&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;The &lt;em&gt;voting&lt;/em&gt; plugin will add a &lt;em&gt;"vote content&lt;/em&gt;" block for every existing content.&lt;/li&gt;&lt;li&gt;The &lt;em&gt;facebook&lt;/em&gt; plugin will add a &lt;em&gt;"Share in facebook"&lt;/em&gt; action in every visited content.&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;&lt;li&gt;Try &lt;a href="/admin/theming/theme/"&gt;other themes&lt;/a&gt;. &lt;/li&gt;&lt;/ul&gt;</field>
   </object>
-  <object pk="9" model="section.documentsection">
+  <object pk="9" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">32</field>
     <field type="IntegerField" name="position">1</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;h2&gt;To get further&lt;/h2&gt;&lt;p&gt;Please go to &lt;a href="http://docs.merengueproject.org/"&gt;Merengue documentation&lt;/a&gt; to learn more about Merengue, from a developer and content manager point of view.&lt;/p&gt;</field>
   </object>
-  <object pk="4" model="section.documentsection">
+  <object pk="4" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">31</field>
     <field type="IntegerField" name="position">0</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;p&gt;This is the first section. You can double click here to edit, or translating this clicking on the&amp;nbsp;&lt;img src="../../../../../../media/merengue/img/section/section_actions.png" alt="section icon" /&gt;icon.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit&lt;/li&gt;&lt;/ul&gt;</field>
     <field type="TextField" name="body_fr"></field>
   </object>
-  <object pk="6" model="section.documentsection">
+  <object pk="6" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">33</field>
     <field type="IntegerField" name="position">0</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;p&gt;This is the first section. You can double click here to edit, or translating this clicking on the&amp;nbsp;&lt;img src="../../../../../../media/merengue/img/section/section_actions.png" alt="section icon" /&gt;icon.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Lorem ipsum&lt;/li&gt;&lt;li&gt;Dolor sit&lt;/li&gt;&lt;/ul&gt;</field>
     <field type="TextField" name="body_fr"></field>
   </object>
-  <object pk="5" model="section.documentsection">
+  <object pk="5" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">31</field>
     <field type="IntegerField" name="position">1</field>
     <field type="TextField" name="body_es"></field>
     <field type="TextField" name="body_en">&lt;p&gt;Other section.&lt;/p&gt;</field>
     <field type="TextField" name="body_fr"></field>
-  <object pk="7" model="section.documentsection">
+  <object pk="7" model="section.documentsection" overwrite="no">
     <field to="section.document" name="document" rel="ManyToOneRel">33</field>
     <field type="IntegerField" name="position">1</field>
     <field type="TextField" name="body_es"></field>
@@ -219,7 +231,7 @@
     <field type="TextField" name="body_fr"></field>
   </object>
   </object>
-  <object pk="33" model="base.basecontent">
+  <object pk="33" model="base.basecontent" overwrite="no">
     <field type="CharField" name="name_es">Documento de sección de prueba</field>
     <field type="CharField" name="name_en">Document in test section</field>
     <field type="CharField" name="name_fr"></field>
@@ -245,7 +257,7 @@
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
   </object>
-  <object pk="5" model="section.menu">
+  <object pk="5" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">Menú al documento</field>
     <field type="CharField" name="name_en">Menu to document</field>
     <field type="CharField" name="name_fr"></field>
@@ -257,7 +269,7 @@
     <field type="PositiveIntegerField" name="tree_id">2</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
-  <object pk="2" model="section.menu">
+  <object pk="2" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">Menu principal de sección</field>
     <field type="CharField" name="name_en">Main menu of section</field>
     <field type="CharField" name="name_fr">Menu principal de l'zone</field>
@@ -269,7 +281,7 @@
     <field type="PositiveIntegerField" name="tree_id">2</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
-  <object pk="6" model="section.menu">
+  <object pk="6" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">Menú a Django</field>
     <field type="CharField" name="name_en">Menu to Django</field>
     <field type="CharField" name="name_fr"></field>
@@ -281,7 +293,7 @@
     <field type="PositiveIntegerField" name="tree_id">2</field>
     <field type="PositiveIntegerField" name="level">2</field>
   </object>
-  <object pk="4" model="section.menu">
+  <object pk="4" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es"><None></None></field>
     <field type="CharField" name="name_en">Main menu of Otra sección</field>
     <field type="CharField" name="name_fr"><None></None></field>
@@ -293,7 +305,7 @@
     <field type="PositiveIntegerField" name="tree_id">4</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
-  <object pk="7" model="section.menu">
+  <object pk="7" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">Menú a otro doc</field>
     <field type="CharField" name="name_en">Menu to other doc</field>
     <field type="CharField" name="name_fr"></field>
@@ -305,25 +317,25 @@
     <field type="PositiveIntegerField" name="tree_id">4</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
-  <object pk="1" model="section.baselink">
+  <object pk="1" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">5</field>
   </object>
-  <object pk="2" model="section.baselink">
+  <object pk="2" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">6</field>
   </object>
-  <object pk="3" model="section.baselink">
+  <object pk="3" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">7</field>
   </object>
-  <object pk="2" model="section.absolutelink">
+  <object pk="2" model="section.absolutelink" overwrite="no">
     <field type="CharField" name="url">http://www.djangoproject.org/</field>
   </object>
-  <object pk="1" model="section.contentlink">
+  <object pk="1" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">33</field>
   </object>
-  <object pk="3" model="section.contentlink">
+  <object pk="3" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">31</field>
   </object>
-  <object pk="4" model="threadedcomments.freethreadedcomment">
+  <object pk="4" model="threadedcomments.freethreadedcomment" overwrite="no">
     <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
     <field type="PositiveIntegerField" name="object_id">1</field>
     <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel">3</field>
@@ -339,7 +351,7 @@
     <field type="BooleanField" name="is_approved">False</field>
     <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
-  <object pk="3" model="threadedcomments.freethreadedcomment">
+  <object pk="3" model="threadedcomments.freethreadedcomment" overwrite="no">
     <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
     <field type="PositiveIntegerField" name="object_id">1</field>
     <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel"><None></None></field>
@@ -355,7 +367,7 @@
     <field type="BooleanField" name="is_approved">False</field>
     <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
-  <object pk="2" model="threadedcomments.freethreadedcomment">
+  <object pk="2" model="threadedcomments.freethreadedcomment" overwrite="no">
     <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
     <field type="PositiveIntegerField" name="object_id">1</field>
     <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel">1</field>
@@ -371,7 +383,7 @@
     <field type="BooleanField" name="is_approved">False</field>
     <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
-  <object pk="1" model="threadedcomments.freethreadedcomment">
+  <object pk="1" model="threadedcomments.freethreadedcomment" overwrite="no">
     <field to="contenttypes.contenttype" name="content_type" rel="ManyToOneRel">45</field>
     <field type="PositiveIntegerField" name="object_id">1</field>
     <field to="threadedcomments.freethreadedcomment" name="parent" rel="ManyToOneRel"><None></None></field>
@@ -387,7 +399,7 @@
     <field type="BooleanField" name="is_approved">False</field>
     <field type="IPAddressField" name="ip_address">127.0.0.1</field>
   </object>
-  <object pk="1" model="portal.portallink">
+  <object pk="1" model="portal.portallink" overwrite="no">
     <field type="CharField" name="name_es">Enlace primario 1</field>
     <field type="CharField" name="name_en">Primary link 1</field>
     <field type="CharField" name="name_fr"></field>
@@ -399,7 +411,7 @@
     <field type="SlugField" name="slug">primary-link1</field>
     <field type="FileField" name="image"></field>
   </object>
-  <object pk="2" model="portal.portallink">
+  <object pk="2" model="portal.portallink" overwrite="no">
     <field type="CharField" name="name_es">Enlace primario 2</field>
     <field type="CharField" name="name_en">Primary link 2</field>
     <field type="CharField" name="name_fr"></field>
@@ -411,7 +423,7 @@
     <field type="SlugField" name="slug">primary-link-2</field>
     <field type="FileField" name="image"></field>
   </object>
-  <object pk="3" model="portal.portallink">
+  <object pk="3" model="portal.portallink" overwrite="no">
     <field type="CharField" name="name_es">Enlace secundario 1</field>
     <field type="CharField" name="name_en">Secondary link 1</field>
     <field type="CharField" name="name_fr"></field>
@@ -423,7 +435,7 @@
     <field type="SlugField" name="slug">secondary-link1</field>
     <field type="FileField" name="image"></field>
   </object>
-  <object pk="4" model="portal.portallink">
+  <object pk="4" model="portal.portallink" overwrite="no">
     <field type="CharField" name="name_es">Enlace secundario 2</field>
     <field type="CharField" name="name_en">Secondary link 2</field>
     <field type="CharField" name="name_fr"></field>
@@ -435,7 +447,7 @@
     <field type="SlugField" name="slug">secondary-link2</field>
     <field type="FileField" name="image"></field>
   </object>
-  <object pk="1" model="multimedia.basemultimedia">
+  <object pk="1" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Example image 1</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:35:46</field>
@@ -445,7 +457,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="2" model="multimedia.basemultimedia">
+  <object pk="2" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Example image 2</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:36:23</field>
@@ -455,7 +467,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="3" model="multimedia.basemultimedia">
+  <object pk="3" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Example image 3</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:36:56</field>
@@ -465,7 +477,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="4" model="multimedia.basemultimedia">
+  <object pk="4" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Navigation system</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:38:46</field>
@@ -475,7 +487,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="5" model="multimedia.basemultimedia">
+  <object pk="5" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Visual block management</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:39:12</field>
@@ -485,7 +497,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="6" model="multimedia.basemultimedia">
+  <object pk="6" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Skinnable screencast</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:39:42</field>
@@ -495,7 +507,7 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="7" model="multimedia.basemultimedia">
+  <object pk="7" model="multimedia.basemultimedia" overwrite="no">
     <field type="CharField" name="name">Merengue dog</field>
     <field type="CharField" name="original_filename"><None></None></field>
     <field type="DateTimeField" name="creation_date">2010-09-02 12:39:42</field>
@@ -505,94 +517,94 @@
     <field to="auth.user" name="last_editor" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="authors"></field>
   </object>
-  <object pk="1" model="multimedia.photo">
+  <object pk="1" model="multimedia.photo" overwrite="no">
     <field type="FileField" name="image">fotos/image_1.jpeg</field>
     <field type="TextField" name="caption_es">Imagen de ejemplo de un perro</field>
     <field type="TextField" name="caption_en">Example image of a dog</field>
     <field type="TextField" name="caption_fr"></field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="2" model="multimedia.photo">
+  <object pk="2" model="multimedia.photo" overwrite="no">
     <field type="FileField" name="image">fotos/image_2.jpeg</field>
     <field type="TextField" name="caption_es">Imagen de ejemplo de futbolín</field>
     <field type="TextField" name="caption_en">Foosball example image</field>
     <field type="TextField" name="caption_fr"></field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="3" model="multimedia.photo">
+  <object pk="3" model="multimedia.photo" overwrite="no">
     <field type="FileField" name="image">fotos/image_3.jpeg</field>
     <field type="TextField" name="caption_es">Imagen de ejemplo de robot</field>
     <field type="TextField" name="caption_en">Robot image example</field>
     <field type="TextField" name="caption_fr"></field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="4" model="multimedia.video">
+  <object pk="4" model="multimedia.video" overwrite="no">
     <field type="FileField" name="file"></field>
     <field type="FileField" name="preview"></field>
     <field type="CharField" name="external_url">http://www.youtube.com/watch?v=iB5k6uIWULs</field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="5" model="multimedia.video">
+  <object pk="5" model="multimedia.video" overwrite="no">
     <field type="FileField" name="file"></field>
     <field type="FileField" name="preview"></field>
     <field type="CharField" name="external_url">http://www.youtube.com/watch?v=31BCNBAEBjU</field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="6" model="multimedia.video">
+  <object pk="6" model="multimedia.video" overwrite="no">
     <field type="FileField" name="file"></field>
     <field type="FileField" name="preview"></field>
     <field type="CharField" name="external_url">http://www.youtube.com/watch?v=frxiP_ICphk</field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="7" model="multimedia.video">
+  <object pk="7" model="multimedia.video" overwrite="no">
     <field type="FileField" name="file"></field>
     <field type="FileField" name="preview">videos/preview_7.png</field>
     <field type="CharField" name="external_url">http://www.youtube.com/watch?v=Nc9xq-TVyHI</field>
     <field type="CharField" name="plone_uid"><None></None></field>
   </object>
-  <object pk="1" model="base.multimediarelation">
+  <object pk="1" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">1</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">0</field>
   </object>
-  <object pk="4" model="base.multimediarelation">
+  <object pk="4" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">4</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">1</field>
   </object>
-  <object pk="2" model="base.multimediarelation">
+  <object pk="2" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">2</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">1</field>
   </object>
-  <object pk="5" model="base.multimediarelation">
+  <object pk="5" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">5</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">4</field>
   </object>
-  <object pk="3" model="base.multimediarelation">
+  <object pk="3" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">3</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">2</field>
   </object>
-  <object pk="6" model="base.multimediarelation">
+  <object pk="6" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">6</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">2</field>
   </object>
-  <object pk="7" model="base.multimediarelation">
+  <object pk="7" model="base.multimediarelation" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">32</field>
     <field to="multimedia.basemultimedia" name="multimedia" rel="ManyToOneRel">7</field>
     <field type="BooleanField" name="is_featured">False</field>
     <field type="IntegerField" name="order">0</field>
   </object>
-  <object pk="1" model="sites.site">
+  <object pk="1" model="sites.site" overwrite="no">
     <field type="CharField" name="domain">demo.merengueproject.org</field>
     <field type="CharField" name="name">demo.merengueproject.org</field>
   </object>
