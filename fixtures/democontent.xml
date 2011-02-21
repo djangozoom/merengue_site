@@ -618,4 +618,88 @@
     <field type="TextField" name="traceback"></field>
     <field type="TextField" name="config">{"home_initial_content": 32}</field>
   </object>
+  <object pk="8" model="section.menu">
+    <field type="CharField" name="name_es">menú 1</field>
+    <field type="CharField" name="name_en">menu 1</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-1</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">3</field>
+    <field type="CharField" name="url">/cms/menu/menu-1/</field>
+    <field type="PositiveIntegerField" name="lft">2</field>
+    <field type="PositiveIntegerField" name="rght">9</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">1</field>
+  </object>
+  <object pk="10" model="section.menu">
+    <field type="CharField" name="name_es">menú 1.1</field>
+    <field type="CharField" name="name_en">menu 1.1</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-11</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">8</field>
+    <field type="CharField" name="url">/cms/menu/menu-1/menu-11/</field>
+    <field type="PositiveIntegerField" name="lft">3</field>
+    <field type="PositiveIntegerField" name="rght">6</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">2</field>
+  </object>
+  <object pk="12" model="section.menu">
+    <field type="CharField" name="name_es">menú 1.1</field>
+    <field type="CharField" name="name_en">menu 1.1.1</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-111</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">10</field>
+    <field type="CharField" name="url">/cms/menu/menu-1/menu-11/menu-111/</field>
+    <field type="PositiveIntegerField" name="lft">4</field>
+    <field type="PositiveIntegerField" name="rght">5</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">3</field>
+  </object>
+  <object pk="9" model="section.menu">
+    <field type="CharField" name="name_es">menú 2</field>
+    <field type="CharField" name="name_en">menu 2</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-2</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">3</field>
+    <field type="CharField" name="url">/cms/menu/menu-2/</field>
+    <field type="PositiveIntegerField" name="lft">10</field>
+    <field type="PositiveIntegerField" name="rght">11</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">1</field>
+  </object>
+  <object pk="11" model="section.menu">
+    <field type="CharField" name="name_es">menú 1.2</field>
+    <field type="CharField" name="name_en">menu 1.2</field>
+    <field type="CharField" name="name_fr"></field>
+    <field type="SlugField" name="slug">menu-12</field>
+    <field to="section.menu" name="parent" rel="ManyToOneRel">8</field>
+    <field type="CharField" name="url">/cms/menu/menu-1/menu-12/</field>
+    <field type="PositiveIntegerField" name="lft">7</field>
+    <field type="PositiveIntegerField" name="rght">8</field>
+    <field type="PositiveIntegerField" name="tree_id">3</field>
+    <field type="PositiveIntegerField" name="level">2</field>
+  </object>
+  <object pk="5" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">9</field>
+  </object>
+  <object pk="6" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">10</field>
+  </object>
+  <object pk="7" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">11</field>
+  </object>
+  <object pk="8" model="section.baselink">
+    <field to="section.menu" name="menu" rel="OneToOneRel">12</field>
+  </object>
+  <object pk="5" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">33</field>
+  </object>
+  <object pk="6" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">33</field>
+  </object>
+  <object pk="7" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">31</field>
+  </object>
+  <object pk="8" model="section.contentlink">
+    <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
+  </object>
 </django-objects>
