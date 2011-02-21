@@ -618,7 +618,7 @@
     <field type="TextField" name="traceback"></field>
     <field type="TextField" name="config">{"home_initial_content": 32}</field>
   </object>
-  <object pk="8" model="section.menu">
+  <object pk="8" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">menú 1</field>
     <field type="CharField" name="name_en">menu 1</field>
     <field type="CharField" name="name_fr"></field>
@@ -630,7 +630,7 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
-  <object pk="10" model="section.menu">
+  <object pk="10" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">menú 1.1</field>
     <field type="CharField" name="name_en">menu 1.1</field>
     <field type="CharField" name="name_fr"></field>
@@ -642,7 +642,7 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">2</field>
   </object>
-  <object pk="12" model="section.menu">
+  <object pk="12" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">menú 1.1</field>
     <field type="CharField" name="name_en">menu 1.1.1</field>
     <field type="CharField" name="name_fr"></field>
@@ -654,7 +654,7 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">3</field>
   </object>
-  <object pk="9" model="section.menu">
+  <object pk="9" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">menú 2</field>
     <field type="CharField" name="name_en">menu 2</field>
     <field type="CharField" name="name_fr"></field>
@@ -666,7 +666,7 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
-  <object pk="11" model="section.menu">
+  <object pk="11" model="section.menu" overwrite="no">
     <field type="CharField" name="name_es">menú 1.2</field>
     <field type="CharField" name="name_en">menu 1.2</field>
     <field type="CharField" name="name_fr"></field>
@@ -678,28 +678,28 @@
     <field type="PositiveIntegerField" name="tree_id">3</field>
     <field type="PositiveIntegerField" name="level">2</field>
   </object>
-  <object pk="5" model="section.baselink">
+  <object pk="5" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">9</field>
   </object>
-  <object pk="6" model="section.baselink">
+  <object pk="6" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">10</field>
   </object>
-  <object pk="7" model="section.baselink">
+  <object pk="7" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">11</field>
   </object>
-  <object pk="8" model="section.baselink">
+  <object pk="8" model="section.baselink" overwrite="no">
     <field to="section.menu" name="menu" rel="OneToOneRel">12</field>
   </object>
-  <object pk="5" model="section.contentlink">
+  <object pk="5" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">33</field>
   </object>
-  <object pk="6" model="section.contentlink">
+  <object pk="6" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">33</field>
   </object>
-  <object pk="7" model="section.contentlink">
+  <object pk="7" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">31</field>
   </object>
-  <object pk="8" model="section.contentlink">
+  <object pk="8" model="section.contentlink" overwrite="no">
     <field to="base.basecontent" name="content" rel="ManyToOneRel">1</field>
   </object>
 </django-objects>
