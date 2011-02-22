@@ -132,7 +132,7 @@
     <field type="CharField" name="tags"></field>
     <field type="TextField" name="meta_desc"></field>
     <field type="CharField" name="commentable">allowed</field>
-    <field type="CharField" name="class_name">document</field>
+    <field type="CharField" name="class_name">basesection</field>
     <field type="FloatField" name="rank">100.0</field>
     <field to="base.basecontent" name="related_items" rel="ManyToManyRel"></field>
     <field to="auth.user" name="owners" rel="ManyToManyRel"></field>
