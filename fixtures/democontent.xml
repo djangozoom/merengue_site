@@ -145,7 +145,7 @@
     <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="url"><None></None></field>
     <field type="PositiveIntegerField" name="lft">1</field>
-    <field type="PositiveIntegerField" name="rght">2</field>
+    <field type="PositiveIntegerField" name="rght">7</field>
     <field type="PositiveIntegerField" name="tree_id">4</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
@@ -269,7 +269,7 @@
     <field type="PositiveIntegerField" name="tree_id">2</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
-  <object pk="2" model="section.menu" overwrite="no">
+  <object pk="2" model="section.menu" overwrite="yes">
     <field type="CharField" name="name_es">Menu principal de sección</field>
     <field type="CharField" name="name_en">Main menu of section</field>
     <field type="CharField" name="name_fr">Menu principal de l'zone</field>
@@ -301,7 +301,7 @@
     <field to="section.menu" name="parent" rel="ManyToOneRel"><None></None></field>
     <field type="CharField" name="url"><None></None></field>
     <field type="PositiveIntegerField" name="lft">1</field>
-    <field type="PositiveIntegerField" name="rght">4</field>
+    <field type="PositiveIntegerField" name="rght">7</field>
     <field type="PositiveIntegerField" name="tree_id">4</field>
     <field type="PositiveIntegerField" name="level">0</field>
   </object>
@@ -312,8 +312,8 @@
     <field type="SlugField" name="slug">menu-other-doc</field>
     <field to="section.menu" name="parent" rel="ManyToOneRel">4</field>
     <field type="CharField" name="url">/cms/sections/section-two/menu-other-doc/</field>
-    <field type="PositiveIntegerField" name="lft">2</field>
-    <field type="PositiveIntegerField" name="rght">3</field>
+    <field type="PositiveIntegerField" name="lft">4</field>
+    <field type="PositiveIntegerField" name="rght">7</field>
     <field type="PositiveIntegerField" name="tree_id">4</field>
     <field type="PositiveIntegerField" name="level">1</field>
   </object>
