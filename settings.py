@@ -4,7 +4,7 @@
 from os import path
 from merengue.settings import *
 
-ugettext = lambda s: s # dummy ugettext function, as said on django docs
+ugettext = lambda s: s  # dummy ugettext function, as said on django docs
 
 BASEDIR = path.dirname(path.abspath(__file__))
 
@@ -150,6 +150,20 @@ JOHNNY_MIDDLEWARE_KEY_PREFIX = '%s-cache' % DATABASE_NAME
 # Do not detect plugins
 DETECT_BROKEN_PLUGINS = False
 DETECT_NEW_PLUGINS = False
+
+# it merengue will send an email if there are some task to review
+SEND_MAIL_IF_PENDING = False
+
+DEBUG_TOOLBAR_PANELS = (
+    #'debug_toolbar.panels.version.VersionDebugPanel',
+    #'debug_toolbar.panels.timer.TimerDebugPanel',
+    'debug_toolbar.panels.headers.HeaderDebugPanel',
+    'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+    #'debug_toolbar.panels.sql.SQLDebugPanel',
+    #'debug_toolbar.panels.cache.CacheDebugPanel',
+    'debug_toolbar.panels.template.TemplateDebugPanel',
+    #'debug_toolbar.panels.logger.LoggingPanel',
+)
 
 # Allow overwriting any configuration in optional settings_local.py
 # (it can be used to set up your own database, debug and cache options, contact mails...)
