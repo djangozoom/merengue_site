@@ -22,7 +22,7 @@
 </style>
 
 <div id="login">
-  <form method="post" action="{% url merengue_login %}">
+  <form method="post" action="{% url merengue_login %}">{% csrf_token %}
   <h1>{% inline_trans "Merengue demo server" %}</h1>
   <p class="credentials">{% inline_trans "You can log in with" %}: <code><strong>admin</strong>/<strong>admin</strong></code></p>
   {{ form.as_p }}
