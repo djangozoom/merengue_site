@@ -2,7 +2,7 @@
 # Django settings for merengue project.
 
 from os import path
-from merengue.settings import *
+from merengue.settings import *  # pyflakes:ignore
 
 ugettext = lambda s: s  # dummy ugettext function, as said on django docs
 
@@ -12,6 +12,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 DEBUG_TOOLBAR = DEBUG
 HTTP_ERRORS_DEBUG = DEBUG
+COMPRESS = not DEBUG  # JS and CSS compression
 
 ADMINS = (
     ('Manuel Saelices', 'msaelices@yaco.es'),
@@ -19,17 +20,22 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASE_ENGINE = 'postgresql_psycopg2'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-DATABASE_NAME = 'demomerengue'             # Or path to database file if using sqlite3.
-DATABASE_USER = 'demomerengue'             # Not used with sqlite3.
-DATABASE_PASSWORD = ''         # Not used with sqlite3.
-DATABASE_HOST = ''             # Set to empty string for localhost. Not used with sqlite3.
-DATABASE_PORT = ''             # Set to empty string for default. Not used with sqlite3.
-
-if DATABASE_ENGINE == 'postgresql_psycopg2':
-    DATABASE_OPTIONS = {
-        'autocommit': True,
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'demomerengue',                       # Or path to database file if using sqlite3.
+        'USER': 'demomerengue',                       # Not used with sqlite3.
+        'PASSWORD': '',                   # Not used with sqlite3.
+        'HOST': '',                       # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                       # Set to empty string for default. Not used with sqlite3.
     }
+}
+
+for database in DATABASES.values():
+    if database['ENGINE'] == 'django.db.backends.postgresql_psycopg2':
+        database['OPTIONS'] = {
+            'autocommit': True,
+        }
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -43,13 +49,14 @@ TIME_ZONE = 'Europe/Madrid'
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = (
-    ('es', ugettext('Español')),
     ('en', ugettext('English')),
-    ('fr', ugettext('Français')),
+    ('es', ugettext('Español')),
+    ('it', ugettext('Italiano')),
 )
 
+URL_DEFAULT_LANG = LANGUAGE_CODE
+
 SITE_ID = 1
-SITE_REGISTER_ID = 2
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -60,6 +67,11 @@ USE_GIS = False
 
 if USE_GIS:
     INSTALLED_APPS += ('django.contrib.gis', 'merengue.places', )
+    if DATABASES['default']['ENGINE'] == 'django.db.backends.postgresql_psycopg2':
+        DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
+        TEST_DB_CREATION_SUFFIX = 'WITH TEMPLATE template_postgis'
+    if DATABASES['default']['ENGINE'] == 'django.db.backends.mysql':
+        DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.mysql'
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -78,7 +90,7 @@ ADMIN_MEDIA_PREFIX = '/admin_media/'
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'v$*k)ri8i*yv@yb2w!c)t#aj$o=na8u#855#wsve4!iw%u__hy'
 
-MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + (
+MIDDLEWARE_CLASSES = PRE_MERENGUE_MIDDLEWARE_CLASSES + MERENGUE_MIDDLEWARE_CLASSES + POST_MERENGUE_MIDDLEWARE_CLASSES + (
     # put here aditional middlewares
 )
 
@@ -95,10 +107,6 @@ INSTALLED_APPS += (
     'website',
 )
 
-SVNDIR = path.join(BASEDIR, 'apps')
-
-TEST_DB_CREATION_SUFFIX = 'WITH TEMPLATE template_postgis'
-
 FIXTURE_DIRS = (
     path.join(BASEDIR, 'fixtures', ),
 )
@@ -114,11 +122,7 @@ DEMO_PLUGINS = (
     'feedback',
 )
 
-BUILDBOT_IP = '192.168.11.209'
-INTERNAL_IPS = ('127.0.0.1', '80.36.82.38', BUILDBOT_IP)
-
-if DEBUG_TOOLBAR:
-    INTERNAL_IPS += ('192.168.10.10', )
+INTERNAL_IPS = ('127.0.0.1', )
 
 # Pagination options
 LIMIT_URL_SPIDER_TEST = 20
@@ -131,21 +135,20 @@ TINYMCE_EXTRA_MEDIA = {
    'css': [],
 }
 
-SEARCHBAR_MIN_RESULTS = 5
-
-LOGOUT_PROTECTED_URL_REDIRECTS = (
-    #(r'^/regularexpresion/(.*)$', '/redirect_url'),
-)
-
 PRODUCTION_DB_URL = ""
 PRODUCTION_DB_UPDATE_PASSWORDS = (('admin', 'admin'), )
 
-# For transhette
-ENABLE_TRANSLATION_SUGGESTIONS = False
-
 # For johnny cache. Johnny cache key prefix should not be the same in other projects
-CACHE_BACKEND = 'johnny.backends.locmem:///'
-JOHNNY_MIDDLEWARE_KEY_PREFIX = '%s-cache' % DATABASE_NAME
+CACHES = {
+    'default': {
+        'BACKEND': 'johnny.backends.locmem.LocMemCache',
+        'KEY_PREFIX': SECRET_KEY,
+        'OPTIONS': {
+            'MAX_ENTRIES': 3000,
+        },
+    }
+}
+JOHNNY_MIDDLEWARE_KEY_PREFIX = '%s-cache' % DATABASES['default']['NAME']
 
 # Do not detect plugins
 DETECT_BROKEN_PLUGINS = False
