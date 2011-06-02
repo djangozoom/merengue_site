@@ -101,7 +101,6 @@ TEMPLATE_DIRS = (
 ) + TEMPLATE_DIRS
 
 LOGIN_REDIRECT_URL = '/'
-LOGIN_URL = '/account/login/'
 
 INSTALLED_APPS += (
     'website',
