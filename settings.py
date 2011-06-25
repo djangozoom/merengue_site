@@ -94,7 +94,7 @@ MIDDLEWARE_CLASSES = PRE_MERENGUE_MIDDLEWARE_CLASSES + MERENGUE_MIDDLEWARE_CLASS
     # put here aditional middlewares
 )
 
-ROOT_URLCONF = 'demomerengueprojectorg.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     path.join(BASEDIR, 'templates'),
