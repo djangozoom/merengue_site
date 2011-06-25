@@ -1,2 +1,2 @@
 #merengue==0.8.0-b2
--e svn+https://svn.merengueproject.org/trunk/merengueproj#egg=merengue
+-e svn+http://svn.merengueproject.org/trunk/merengueproj#egg=merengue
