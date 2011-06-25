@@ -1,0 +1,2 @@
+-e svn+https://svn.merengueproject.org/trunk/merengueproj/merengue#egg=merengue
+-e svn+https://svn.merengueproject.org/trunk/merengueproj/plugins
