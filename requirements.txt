@@ -1,1 +1,2 @@
-merengue==0.8.0-rc1
+#merengue==0.8.0-rc1
+-e svn+http://svn.merengueproject.org/trunk/merengueproj#egg=merengueproj
