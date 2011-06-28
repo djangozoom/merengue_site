@@ -1,6 +1,1 @@
-# python libraries
-
-# Django
-#Django>=1.2
-
-# Django applications
+merengue==0.8.0-rc1
